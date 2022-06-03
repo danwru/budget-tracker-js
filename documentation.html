@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ 	<meta charset="utf-8">
+    <title>Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="examples.css">
+ </head>
+ <body>
+ 	<div id="page">
+	 	<h1 id='top'>BudgetJS</h1>
+	 	<ul>
+		  <li><a href="examples.html">Examples</a></li>
+		  <li><a href="examples_code.html">Examples Code</a></li>
+		  <li><a class="active" href="documentation.html">Documentation and API</a></li>
+		</ul>
+		<p id="info">A Budget system for tracking income and expenses.</p>
+	 	<div id="gettingStarted">
+		 	<h2 id="explaination">Getting Started</h3>
+		 	<p>You will need to include the budget.js script and the budget.css stylesheet
+		 	in your webpage.</p>
+		 	<p class="code">&ltlink rel="stylesheet" type="text/css" href="budget.css"&gt<br>&ltscript defer type="text/javascript" src='budget.js'&gt&lt/script&gt</p>
+		 	<h3>Creating a new budget system</h3>
+			<p>After including budget.js and budget.css, these two lines of code are all that is required to create the budget system with all of the features.</p>
+			<pre class="line-numbers">
+				<code class="language-javascript">
+	const budgetInstance = new Budget("Budget name", "incomeID", "expenseID");
+	budgetInstance.makeBudget();
+				</code>
+			</pre>
+		 	<h2 id="explaination">API</h2>
+		 </div>
+		 <div id="API">
+		 	<p>The library centers around a budget object Budget().</p>
+		 	<pre class="line-numbers">
+				<code class="language-javascript">
+	const budgetInstance = new Budget(name, incID, expID) {
+		this.name = name;
+		this.incID = incID;
+		this.expID = expID;
+		this.data = {
+			balance: parseFloat(0),
+			ratio: 0.5,
+			warning: "on",
+			items: {
+				income: [],
+				expense: []
+				},
+			}
+		}
+	}
+				</code>
+			</pre>
+			<h4>name</h4>
+			<p class="APIelement">A string representing the name of the budget.</p>
+			<h4>incID and expID</h4>
+			<p class="APIelement">A string representing the unique id for each of all the incomes and all expenses.<b>These ids must be unique and not pre-existing for the budget system to function properly.</b></p>
+			<h4>data.balance</h4>
+			<p class="APIelement">A float number representing the budget balance, which is calculated by total income minus total expenses.</p>
+			<h4>data.ratio</h4>
+			<p class="APIelement">A float number representing the ratio of expenses to income.</p>
+			<h4>data.warning</h4>
+			<p class="APIelement">A string to toggle warnings on and off.</p>
+			<h4>data.items.income[]</h4>
+			<p class="APIelement">An object array holding all the existing income objects in the given budget.</p>
+			<h4>data.items.expense[]</h4>
+			<p class="APIelement">An object array holding all the existing expense objects in the given budget.</p>
+			<h3>Income() and Expense() objects: </h4>
+			<pre class="line-numbers">
+				<code class="language-javascript">
+	const incomeInstance = new Income(id, name, value) {
+		this.id = id;
+		this.name = name;
+		this.value = value;
+		}
+	const expenseInstance = new Expense(id, name, value) {
+		this.id = id;
+		this.name = name;
+		this.value = value;
+		}
+				</code>
+			</pre>
+			<p class="APIelement">These objects will solely be created by the library functions themselves. If you wish to create an income or expense object manually, use and refer to addData(). <br>Both income and expense objects are similar in structure: <br> (id): an integer representing a unique id (generated through addData()). <br> (name): a string representing the name of the respective income or expense. <br> (value): a float representing the amount.</p>
+			<br>
+			<h3>Functions</h3>
+			<pre class="line-numbers">
+				<code class="language-javascript">
+	budgetInstance.makeBudget();
+	budgetInstance.addData(type, name, value);
+	budgetInstance.addGenerateReport();
+	budgetInstance.makeIncomeTable();
+	budgetInstance.makeExpenseTable();
+	budgetInstance.updateBalance();
+	budgetInstance.addIncomeToTable();
+	budgetInstance.addExpenseToTable();
+	budgetInstance.removeIncomeFromTable(id);
+	budgetInstance.removeExpenseFromTable(id);
+	budgetInstance.inputWarning(text);
+	budgetInstance.createReport(text);
+	budgetInstance.updateRatio(newRatio);
+				</code>
+			</pre>
+			<h4>makeBudget()</h4>
+			<p class="APIelement">Easily creates a div to contain 3 items: a button to generate a report of the budget, a modifiable income table and an expense table.</p>
+			<h4>addData()</h4>
+			<p class="APIelement">Adds an income or expense object to this.data. Returns an income or expense object depending on the type specified. It takes three parameters: <br>
+			(type) a string that is either "income" or "expense".<br>
+			(name) the name of the income or expense. <br>
+			(value) a float number representing the amount.</p>
+			<h4>addGenerateReport()</h4>
+			<p class="APIelement">Creates a text display of the budget name and amount as well as a "Generate Report" button. When the button is clicked, a page overlay appears, showing a report of the current budget instance, total income, total expenses, expense/income ratio and budget balance.</p>
+			<h4>makeIncomeTable() and makeExpenseTable()</h4>
+			<p class="APIelement">Creates an empty and modifable income table and expense table. Returns the div for the table.</p>
+			<h4>updateBalance()</h4>
+			<p class="APIelement">Updates the balance of the budget when an income or expense object is added or deleted.</p>
+			<h4>addIncomeToTable(), addExpenseToTable(), removeIncomeFromTable(), removeExpenseFromTable()</h4>
+			<p class="APIelement">Developers can manually add an income or expense object to their respective tables. These 4 functions only modify the DOM to add or remove the objects. Currently, you can only<u>add</u> income or expense objects manually through javascript. Deleting objects requires clicking the delete button on the table itself. When adding an income or expense, you must also add the data to account for the amount in the total balance. So addIncomeToTable() and addExpenseToTable() must be used in conjunction with addData(). See the "Examples Code" page for a couple examples of this being done.</p>
+			<h4>inputWarning(text)</h4>
+			<p class="APIelement">Sends a closeable popup warning window in the top right corner of the page. It takes in a string representing the text to be sent.</p>
+			<h4>createReport(text)</h4>
+			<p class="APIelement">This creates a full screen overlay of a report of the current budget instance. This function is called after the user clicks "Generate Report" to reveal the overlay.</p>
+			<h4>updateRatio(newRatio)</h4>
+			<p class="APIelement">Allows the developer to change the ratio of expenses to income. This is a threshold to warn users through a popup dialog when they reach the specified ratio. For example, consider the default ratio of 0.5. When the user enters an expense causing the ratio of expenses to income to be above 50%, the DOM will fire a popup dialog as a warning. The display text above the "Generate Report" button also changes from green to yellow as a result.</p>
+			<br>
+		</div>
+	</div>
+ </body>
+
+</html>

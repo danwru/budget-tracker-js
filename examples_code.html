@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ 	<meta charset="utf-8">
+    <title>Examples Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="examples.css">
+ </head>
+ <body>
+ 	<div id="page">
+	 	<h1 id='top'>BudgetJS</h1>
+	 	<ul>
+		  <li><a href="examples.html">Examples</a></li>
+		  <li><a class="active" href="examples_code.html">Examples Code</a></li>
+		  <li><a href="documentation.html">Documentation and API</a></li>
+		</ul>
+		<p id="info">A Budget system for tracking income and expenses.</p>
+		<div id="example1code">
+			<h3>Example 1 Code (Individual Budget)</h3>
+			<pre class="line-numbers">
+				<code class="language-javascript">
+	// EXAMPLE 1
+
+	// create the budget object
+	const i = new Budget("Individual Budget", "inc", "exp");
+	i.makeBudget();
+
+	// add income and expenses objects
+	i.addIncomeToTable(i.addData("income", "Rental Income", 2250));
+	i.addIncomeToTable(i.addData("income", "Main job", 5000));
+	i.addIncomeToTable(i.addData("income", "Photography", 500));
+	i.addIncomeToTable(i.addData("income", "Dog Walking", 100));
+	i.addExpenseToTable(i.addData("expense", "Food", 300));
+	i.addExpenseToTable(i.addData("expense", "Rent", 1800));
+	i.addExpenseToTable(i.addData("expense", "Transportation", 200));
+			  	</code>
+			</pre>
+		</div>
+		<div id="example2code">
+			<h3>Example 2 code (Business Budget)</h3>
+			<pre class="line-numbers">
+				<code class="language-javascript">
+	// EXAMPLE 2
+
+	const b = new Budget("Business Budget", "inc1", "exp1");
+	b.makeBudget();
+
+	b.addIncomeToTable(b.addData("income", "Sales Revenues", 998000));
+	b.addIncomeToTable(b.addData("income", "Interest Revenues", 150000));
+	b.addExpenseToTable(b.addData("expense", "Marketing and Advertising", 33000));
+	b.addExpenseToTable(b.addData("expense", "Wages", 300000));
+	b.addExpenseToTable(b.addData("expense", "Commissions", 50000));
+				</code>
+			</pre>
+		</div>
+		<div id="example3code">
+			<h3>Example 3 code (August Empty Budget)</h3>
+			<pre class="line-numbers">
+				<code class="language-javascript">
+	// EXAMPLE 3
+
+	const e = new Budget("August Budget", "inc2", "exp2");
+	e.makeBudget();
+				</code>
+			</pre>
+		</div>
+	</div>
+ </body>
+
+</html>

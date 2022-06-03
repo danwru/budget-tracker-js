@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ 	<meta charset="utf-8">
+    <title>Budget JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="budget.css">
+    <link rel="stylesheet" type="text/css" href="examples.css">
+    <script defer type="text/javascript" src='js/budget.js'></script>
+    <script defer type="text/javascript" src='js/examples.js'></script>
+ </head>
+ <body>
+ 	<div id="page">
+	 	<h1 id='top'>BudgetJS</h1>
+	 	<ul>
+		  <li><a class="active" href="examples.html">Examples</a></li>
+		  <li><a href="examples_code.html">Examples Code</a></li>
+		  <li><a href="documentation.html">Documentation and API</a></li>
+		</ul>
+		<p id="info">A Budget system for tracking income and expenses.<br></p>
+		<p id="info2"><span id="example">Features:</span></p>
+		<p class="info3"><span class="function">
+			Display of budget name and balance:</span> The text at the top (i.e. Individual Budget: $5550 for example 1) indicates 
+			the name of the budget and its balance (income minus expenses). The text changes in real-time when an item is added and deleted. When expenses are greater than income, it will be highlighted red. When expenses are 50-99.99% of income, it will be highlighted yellow. When expenses are 0.01-50% of income, the text will be highlighed in green. The default threshold for yellow at 50% can easily be changed (refer to the documentation and API page). <br></p>
+		<p class="info3"><span class="function">Automatic warning message: </span>A pop-up dialog will appear when the user enters an expense or removes an income causing the expense/income ratio to exceed the specified threshhold (50%) or when expenses exceeds income. The user may click the "Don't show again" button within the dialog to prevent further warning messages.<br></p>
+		<p class="info3"><span class="function">Adding an income or expense: </span>Enter the name of the income or expense and enter an amount greater than 0. Click the "add" button. The new income/expense row will be added to the table.<br></p>
+		<p class="info3"><span class="function">Invalid input: </span>A closeable pop-up dialog will appear on the top right if an invalid amount is entered. Try entering a string or a value below 0 instead for the amount to see this in action.<br></p>
+		<p class="info3"><span class="function">Deleting an income or expense: </span>Click the delete (x) button to the left of the income or expense name of which you wish to delete. It will remove the income/expense row from the table.<br></p>
+		<p class="info3"><span class="function">Generate Report: </span>Clicking the "Generate Report" button will make a popup overlay appear giving a report of the total income, total expenses, expense/income ratio and available budget.</p>
+		<p id="info2"><span id="example">A few examples below: (see the "Examples Code" page for the code used to create them)</span></p>
+		<p id="info2"><span id="descExample">Example 1 (Individual Budget): Represents the use case for an individual working person. Some mock was data added.</span></p> 
+		<p id="info2"><span id="descExample">Example 2 (Business Budget): Represents the use case for a business. Some mock data was added.</span></p>
+		<p id="info2"><span id="descExample">Example 3 (August Budget): Empty budget with no mock data added.
+		</span></p>
+		<hr id="border" />
+	</div>
+ </body>
+
+</html>

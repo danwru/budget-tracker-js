@@ -1,0 +1,98 @@
+* {
+    font-family:  Arial;
+    margin-left: 10px;
+   }
+   
+   #incomeDiv {
+     margin-bottom: 20px;
+   }
+   
+   #page {
+       margin-left: 0px;
+       padding: 10px;
+   }
+   
+   .code {
+       font-family:  monospace;
+       padding: 10px;
+       width: 38%;
+       background-color: #7a7a7a;
+       color: white;
+   }
+   
+   ul {
+       margin-left: 0px;
+       width: 98%;
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+       overflow: hidden;
+       background-color: #333;
+   }
+   
+   li {
+       float: left;
+   }
+   
+   li a {
+       display: block;
+       color: white;
+       text-align: center;
+       padding: 18px 20px;
+       text-decoration: none;
+   }
+   
+   li a:hover {
+       background-color: #111;
+   }
+   
+   #example {
+       font-weight: bold;
+       font-size: 18px;
+   }
+   
+   #info {
+       margin-bottom: 25px;
+   }
+   
+   #info2 {
+       font-size: 18px;
+       margin-bottom: 0;
+   }
+   
+   .info3 {
+       font-size: 16px;
+       width: 95%;
+       text-align: justify;
+   }
+   
+   .function {
+       color: #ff6f00;
+       font-weight: bold;
+       font-size: 18px;
+   }
+   
+   .line-numbers {
+       font-size: 14px;
+       background-color: #5c5c5c;
+       width: 60%;
+   }
+   
+   .language-javascript {
+       color: white;
+       font-family: monospace;
+   }
+   
+   #descExample {
+       font-size: 16px;
+   }
+   
+   #border {
+       margin-top: 30px;
+       border: 2px solid #858585;
+       width: 97%;
+   }
+   
+   .APIelement {
+       margin-left: 30px;
+   }
