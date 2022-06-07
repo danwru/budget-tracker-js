@@ -1,23 +1,27 @@
 .budgetDiv {
-  float: left;
-  margin-left: 15%;
-  margin-right: 15%; 
-  border-bottom: 1px solid #d1d1d1;
-  border-top: 1px solid #d1d1d1;
-  border-left: 1px solid #d1d1d1;
-  border-right: 1px solid #d1d1d1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 3% 5% 5% 5%;
+  border: 2px solid #8e8e8e;
+  border-radius: 0.5em;
 }
 
-table, th, td {
+td {
   border-bottom: 1px solid #d1d1d1;
+}
+
+th {
+  border-radius: 0.5em;
 }
 
 table {
-  border-left: 1px solid #d1d1d1;
-  border-right: 1px solid #d1d1d1;
   margin-top: 20px;
-  border-collapse: collapse;
   padding: 10px;
+  border: 2px solid #d1d1d1;
+  border-radius: 0.5em;
 }
 
 tr:hover {
@@ -29,8 +33,11 @@ th, td {
   text-align: center;
 }
 
-.addForm{
-  border: 1px solid #dbdbdb;
+.addForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .alert {
@@ -68,7 +75,7 @@ th, td {
 }
 
 .del {
-  width: 5%;
+  width: 1.5rem;
   padding: 2px;
   cursor: pointer;
   border: none;
@@ -93,16 +100,6 @@ th, td {
   float: left;
 }
 
-#incomeDiv {
-  width: 525px;
-  float: left;  
-}
-
-#expenseDiv {
-  width: 525px;
-  float: left;
-}
-
 .incHeader {
   background-color: #00b837;
   color: white;
@@ -116,6 +113,7 @@ th, td {
 .incButton {
   background-color: #00b837;
   border: none;
+  border-radius: 0.5em;
   color: white;
   padding: 5px 10px;
   text-align: center;
@@ -127,6 +125,7 @@ th, td {
 .expButton {
   background-color: #B22222;
   border: none;
+  border-radius: 0.5em;
   color: white;
   padding: 5px 10px;
   text-align: center;
@@ -138,6 +137,7 @@ th, td {
 .grButton {
   background-color: #1464e3;
   border: none;
+  border-radius: 0.5em;
   color: white;
   padding: 5px 10px;
   text-align: center;
@@ -211,9 +211,10 @@ th, td {
 }
 
 .hideWarning {
-  background-color: white;
-  border: none;
-  color: gray;
+  border-radius: 0.5em;
+  border: solid 2px rgb(82, 82, 82);
+  background-color: transparent;
+  color: white;
   padding: 3px 6px;
   text-align: center;
   cursor: pointer;
@@ -223,4 +224,46 @@ th, td {
 
 .hideWarning:hover {
   color: black;
+}
+
+@media only screen and (max-width: 1600px) {
+  .budgetDiv {
+    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  * {
+    font-size: 1rem;
+  }
+
+  .addForm {
+    flex-direction: column;
+  }
+
+  .addForm > input {
+    margin-top: 0.5em;
+  }
+
+  .del {
+    padding: 0.1em 0.1em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  * {
+    font-size: 0.9rem;
+  }
+
+  .addForm > input {
+    margin-top: 0.80em;
+    padding: 0.25em;
+  }
+
+  .del {
+    padding: 0.15em 0.20em;
+  }
 }
