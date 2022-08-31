@@ -1,3 +1,7 @@
+body {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
 .budgetDiv {
   display: flex;
   flex-direction: row;
@@ -7,6 +11,7 @@
   margin: 3% 5% 5% 5%;
   border: 2px solid #8e8e8e;
   border-radius: 0.5em;
+  background-color: #fbfbfb;
 }
 
 td {
@@ -213,13 +218,14 @@ th, td {
 .hideWarning {
   border-radius: 0.5em;
   border: solid 2px rgb(82, 82, 82);
-  background-color: transparent;
+  background-color: rgb(82, 82, 82);
   color: white;
   padding: 3px 6px;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
+  display: none;
 }
 
 .hideWarning:hover {
@@ -264,6 +270,6 @@ th, td {
   }
 
   .del {
-    padding: 0.15em 0.20em;
+    padding: 0.25em 0.30em;
   }
 }

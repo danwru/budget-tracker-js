@@ -222,7 +222,7 @@
       budgetDiv.appendChild(this.makeIncomeTable());
       budgetDiv.appendChild(this.makeExpenseTable());
 
-      const body = document.querySelector("body");
+      const body = document.querySelector("#budgetExamples");
       body.append(budgetDiv);
     },
 
@@ -417,7 +417,7 @@
       report.innerHTML = `<span class="closeReport" 
 								onclick="this.parentElement.style.display='none';">&times;</span> 
   								<p class="reportText">${text}</p>`;
-      const body = document.querySelector("body");
+      const body = document.querySelector("#budgetExamples");
       body.prepend(report);
     },
 
