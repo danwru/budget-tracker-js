@@ -8,13 +8,16 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
-  margin: 3% 5% 5% 5%;
+  margin: 1% 3% 3% 3%;
   border: 2px solid #8e8e8e;
   border-radius: 0.5em;
   background-color: #fbfbfb;
 }
 
 td {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   border-bottom: 1px solid #d1d1d1;
 }
 
@@ -23,7 +26,7 @@ th {
 }
 
 table {
-  margin-top: 20px;
+  margin-top: 1rem;;
   padding: 10px;
   border: 2px solid #d1d1d1;
   border-radius: 0.5em;
@@ -257,6 +260,14 @@ th, td {
   .del {
     padding: 0.1em 0.1em;
   }
+
+  table {
+    max-width: 75%;
+  }
+
+  .budgetDiv {
+    align-items: center;
+  }
 }
 
 @media only screen and (max-width: 450px) {
@@ -265,8 +276,10 @@ th, td {
   }
 
   .addForm > input {
-    margin-top: 0.80em;
+    margin-top: .5rem 0;
     padding: 0.25em;
+    max-width: 90%;
+    max-height: 90%;
   }
 
   .del {
